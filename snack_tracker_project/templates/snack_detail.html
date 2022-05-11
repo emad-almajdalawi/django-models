@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Snack Detils | {{snack.name}}{% endblock %}
+
+{% block body %}
+<p>
+    Snack Detils:
+    </br>
+    </br>
+    Name: {{snack.name}}
+    </br>
+    Description: {{snack.description}}
+    </br>
+    Purchaser: {{snack.purchaser}}
+</p>
+
+{% endblock %}
