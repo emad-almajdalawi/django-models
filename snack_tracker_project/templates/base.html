@@ -1,5 +1,7 @@
 {% load static %}
 
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,36 +14,36 @@
     button {padding: 1vw 1.5vw; stroke-width: 0.25vw; background-color:#8DB596; border: black; border-radius: 1vw; transition-duration: 0.4s; box-shadow: 0 0.8vw 1.6vw 0 black, 0 0.6vw 2vw 0 black;}
     button:hover {background-color: #4CAF50; box-shadow: 0 1.2vw 1.6vw 0 black, 0 1.7vw 5vw 0 black;}
 </style>
-<body style = 'background-color:#0D1117; font-size: 2vw; color: white;'>
-    <header style = 'background-color:#161B22;  display: grid; grid-template-columns: 1.25fr 3fr; justify-content: center; text-align: center; padding:1vw;'>
+<body id = 'body' style = 'background-color:#0D1117; font-size: 2vw; color: white;'>
+    <header id = 'header' style = 'background-color:#161B22;  display: grid; grid-template-columns: 1.25fr 3fr; justify-content: center; text-align: center; padding:1vw;'>
         <div>
             <h1>Django Snacks</h1>
         </div>
         <nav>
-            <ul style = 'display: flex; justify-content: space-around; align-items: center;'>
-                <a href={% url 'home' %}><button type="button" style= 'font-size: 2.2vw;'>HOME</button></a>
-                <a href={% url 'snacks_list' %}><button type="button" style= 'font-size: 2.2vw;'>SNACKS LIST</button></a>
+            <ul id = 'nav_ul' style = 'display: flex; justify-content: space-around; align-items: center;'>
+                <a href={% url 'home' %}><button type="button" id='nav_button' style= 'font-size: 2.2vw;'>HOME</button></a>
+                <a href={% url 'snacks_list' %}><button type="button" id='nav_button' style= 'font-size: 2.2vw;'>SNACKS LIST</button></a>
             </ul>
         </nav>
     </header>
     </br>
-    <div style = 'margin: 2vw;'>
-        {% block body %}{% endblock %}
+    <div id = 'body_content' style = 'margin: 2vw;'>
+        {% block body_content %}{% endblock %}
         </br>
     </div>
    
 
-    <footer style = 'display: flex; justify-content: space-around; text-align: center; background-color:#161B22; font-size: 1vw;'>
+    <footer id = 'footer' style = 'display: flex; justify-content: space-around; text-align: center; background-color:#161B22; font-size: 1vw; padding:1vw;'>
         <div>
             <p>© Copyright reserved</p>
         </div>
 
-        <div style = 'display: flex; justify-content: center; text-align: center;'>
+        <div id = 'footer_imgs_div' style = 'display: flex; justify-content: center; text-align: center;'>
             <a href="https://www.instagram.com/">
-                <img src='{ % static "instagram.png" % }' alt="lnstagram">
+                <img src="{% static 'imgs/instagram.png' %}" alt="lnstagram" id ='contact_img' class="contact_img" style = 'width: 3.5vw;height: 3.5vw;object-fit: scale-down; margin: 0.3vw;'>
             </a>
-            <a href="https://www.facebook.com/">
-                <img src='{ % static "snacks/facebook.png" % }' alt="FaceBook">
+            <a href="https://www.facebook.com/" >
+                <img src="{% static 'imgs/facebook.png' %}" alt="FaceBook" id ='contact_img' class="contact_img" style = 'width: 3.5vw;height: 3.5vw;object-fit: scale-down; margin: 0.3vw;'>
             </a>
         </div>
     </footer>
