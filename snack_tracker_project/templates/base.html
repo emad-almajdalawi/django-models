@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,11 +37,11 @@
         </div>
 
         <div style = 'display: flex; justify-content: center; text-align: center;'>
-            <a href="https://www.instagram.com/?hl=en">
-                <img src="templates/assets/instagram.png" alt="lnstagram">
+            <a href="https://www.instagram.com/">
+                <img src='{ % static "instagram.png" % }' alt="lnstagram">
             </a>
             <a href="https://www.facebook.com/">
-                <img src="templates/assets/facebook.png" alt="FaceBook">
+                <img src='{ % static "snacks/facebook.png" % }' alt="FaceBook">
             </a>
         </div>
     </footer>
