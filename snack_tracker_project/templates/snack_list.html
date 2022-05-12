@@ -2,6 +2,13 @@
 
 {% block title %}Snacks List{% endblock %}
 
-{% block body %}
-<p>Snacks List Page</p>
+{% block body_content %}
+<h2>Snacks List Page</h2>
+</br>
+
+{% for snack in snack_object %}
+<p>
+    <a href={% url 'snack_details' pk=snack.pk %}>{{snack.name}} - {{snack.purchaser}}</a>
+</p>
+{% endfor %}
 {% endblock %}
