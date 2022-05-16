@@ -5,10 +5,9 @@
 {% block body_content %}
 <h2>Snacks List Page</h2>
 </br>
-
-{% for snack in snack_object %}
-<p>
-    <a href={% url 'snack_details' pk=snack.pk %}>{{snack.name}} - {{snack.purchaser}}</a>
-</p>
-{% endfor %}
+    <ul>
+    {% for snack in order_object %}
+        <li><a href={% url 'snack_details' pk=snack.pk %}>{{snack.name}} - {{snack.purchaser}}</a></li>
+    {% endfor %}
+    </ul>
 {% endblock %}

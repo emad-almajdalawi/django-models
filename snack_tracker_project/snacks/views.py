@@ -9,10 +9,15 @@ class HomeView(TemplateView):
 class SnackListView(ListView):
     template_name = 'snack_list.html'
     model = Snack
-    context_object_name = 'snack_object'
+    context_object_name = 'order_object'
+
+
+    # context = { 'order_object': Snack.objects.all() }
+
 
     # def get_queryset(self):
     #     return models.Snack.objects.all()
+
 
 class SnackDeatailView(DetailView):
     template_name = 'snack_detail.html'
